@@ -12,10 +12,11 @@ namespace smDSS
 {
     public partial class FormAdmin : Form
     {
-        string sSelectedFile;
+
         public FormAdmin()
         {
             InitializeComponent();
+
         }
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
@@ -26,19 +27,29 @@ namespace smDSS
         // Inventory Path Button //
         private void button1_Click(object sender, EventArgs e)
         {
+            string sSelectedFile;
             //File browser for finding inventory.csv file saves path to the string sSelectedFile
             OpenFileDialog inventorycsvpath = new OpenFileDialog();
             inventorycsvpath.Filter = "All Files (*.csv)|*.csv*";
             inventorycsvpath.FilterIndex = 1;
-
+            string filename = new SelectedFile().FileName;
             if (inventorycsvpath.ShowDialog() == DialogResult.OK)
             {
-                
-                sSelectedFile = inventorycsvpath.FileName;
-                
+
+                filename = inventorycsvpath.FileName;
+
                 // Debug message box               
                 // MessageBox.Show(sSelectedFile);
             }
         }
+        public  class SelectedFile
+        {
+             public string FileName { get; set; }
+         }
+        
+           
+
     }
+    
+    
 }
