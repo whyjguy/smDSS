@@ -37,9 +37,6 @@ namespace smDSS
             popup.Dispose();
         }
 
-        private void menuBar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+      
     }
 }
