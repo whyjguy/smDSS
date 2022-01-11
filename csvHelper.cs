@@ -10,6 +10,7 @@ using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
 using CsvHelper.TypeConversion;
 using System.Data;
+using System.Windows.Forms;
 
 namespace smDSS
 {
@@ -28,7 +29,10 @@ namespace smDSS
                     var records = Reader.GetRecords<Inventory>().ToList();
 
 
+                    
                     DataTable inventory = new DataTable();
+                   
+
                     inventory.Columns.Add("PartNumber");
                     inventory.Columns.Add("Unit1");
                     inventory.Columns.Add("PartDescription");
@@ -66,13 +70,20 @@ namespace smDSS
                         row["OnHandCost"] = record.onhandcost;
                         row["Bins"] = record.bins;
 
-                        inventory.Rows.Add(row);
+                        inventory.Rows.Add(row);                                             
                     }
+
+                   
+
+
                 }
             }
-        }
 
-        private class InventoryClassMap : ClassMap<Inventory>
+      
+    }
+
+       
+        public class InventoryClassMap : ClassMap<Inventory>
         {
             //Header Mapping for the Inventory CSV Reader
             public InventoryClassMap()

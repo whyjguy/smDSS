@@ -40,6 +40,7 @@ namespace smDSS
 
                 filename = inventorycsvpath.FileName;
                 csvHelper.InventoryReader(filename);
+                
 
                 // Debug message box               
                 // MessageBox.Show(sSelectedFile);
@@ -53,8 +54,7 @@ namespace smDSS
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
-            BindingSource sBind = new BindingSource();
-          //  sBind.DataSource = csvHelper.InventoryReader().inventory;
+            
         }
     }
     
