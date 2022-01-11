@@ -15,12 +15,11 @@ namespace smDSS
 {
     internal class csvHelper
     {
-       
-        
-
+        //csvPath is passed through from the Form Admin after the path is selected from the system dialog. 
+        //InventoryReader() can also be called by pressing the refresh button on the main form to refresh the data tables.
         public static void InventoryReader(string csvPath)
         {
-          // csvPath = FormAdmin().sSelectedFile;
+          
             using ( var streamReader = new StreamReader(csvPath))
             {
                 using (var Reader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
@@ -71,8 +70,6 @@ namespace smDSS
                     }
                 }
             }
-
-            
         }
 
         private class InventoryClassMap : ClassMap<Inventory>
@@ -99,7 +96,6 @@ namespace smDSS
             }
 
         } 
-
         public class Inventory
         {
             //Columns from the PN Inventory Listing csv

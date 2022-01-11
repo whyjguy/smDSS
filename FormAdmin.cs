@@ -50,9 +50,12 @@ namespace smDSS
         {
              public string FileName { get; set; }
          }
-        
-           
 
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+            BindingSource sBind = new BindingSource();
+          //  sBind.DataSource = csvHelper.InventoryReader().inventory;
+        }
     }
     
     
