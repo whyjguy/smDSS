@@ -27,20 +27,24 @@ namespace smDSS
         // Inventory Path Button //
         private void button1_Click(object sender, EventArgs e)
         {
-            string sSelectedFile;
+            
             //File browser for finding inventory.csv file saves path to the string sSelectedFile
             OpenFileDialog inventorycsvpath = new OpenFileDialog();
             inventorycsvpath.Filter = "All Files (*.csv)|*.csv*";
             inventorycsvpath.FilterIndex = 1;
+            
             string filename = new SelectedFile().FileName;
+            
             if (inventorycsvpath.ShowDialog() == DialogResult.OK)
             {
 
                 filename = inventorycsvpath.FileName;
+                csvHelper.InventoryReader(filename);
 
                 // Debug message box               
                 // MessageBox.Show(sSelectedFile);
             }
+
         }
         public  class SelectedFile
         {

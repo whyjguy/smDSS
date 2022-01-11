@@ -9,16 +9,16 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
 using CsvHelper.TypeConversion;
-
+using System.Data;
 
 namespace smDSS
 {
     internal class csvHelper
     {
-        string csvPath = new FormAdmin.SelectedFile().FileName;
+       
         
 
-        public void InventoryReader()
+        public static void InventoryReader(string csvPath)
         {
           // csvPath = FormAdmin().sSelectedFile;
             using ( var streamReader = new StreamReader(csvPath))
@@ -27,8 +27,52 @@ namespace smDSS
                 {
                     Reader.Context.RegisterClassMap<InventoryClassMap>();
                     var records = Reader.GetRecords<Inventory>().ToList();
+
+
+                    DataTable inventory = new DataTable();
+                    inventory.Columns.Add("PartNumber");
+                    inventory.Columns.Add("Unit1");
+                    inventory.Columns.Add("PartDescription");
+                    inventory.Columns.Add("VendorCode");
+                    inventory.Columns.Add("CustomerCode");
+                    inventory.Columns.Add("GLCode");
+                    inventory.Columns.Add("ProductCode");
+                    inventory.Columns.Add("QtyInProcess");
+                    inventory.Columns.Add("QtyOnOrder");
+                    inventory.Columns.Add("QtyReserved");
+                    inventory.Columns.Add("QtyConsumed");
+                    inventory.Columns.Add("QtyOutside");
+                    inventory.Columns.Add("QtyOnHand");
+                    inventory.Columns.Add("UnitCost");
+                    inventory.Columns.Add("OnHandCost");
+                    inventory.Columns.Add("Bins");
+
+                    foreach (var record in records)
+                    {
+                        DataRow row = inventory.NewRow();
+                        row["PartNumber"] = record.partnumber;
+                        row["Unit1"] = record.unit1;
+                        row["PartDescription"] = record.partdescription;
+                        row["VendorCode"] = record.vendorcode;
+                        row["CustomerCode"] = record.customercode;
+                        row["GLCode"] = record.glcode;
+                        row["ProductCode"] = record.productcode;
+                        row["QtyInProcess"] = record.qtyinprocess;
+                        row["QtyOnOrder"] = record.qtyonorder;
+                        row["QtyReserved"] = record.qtyreserved;
+                        row["QtyConsumed"] = record.qtyconsumed;
+                        row["QtyOutside"] = record.qtyoutside;
+                        row["QtyOnHand"] = record.qtyonhand;
+                        row["UnitCost"] = record.unitcost;
+                        row["OnHandCost"] = record.onhandcost;
+                        row["Bins"] = record.bins;
+
+                        inventory.Rows.Add(row);
+                    }
                 }
             }
+
+            
         }
 
         private class InventoryClassMap : ClassMap<Inventory>
