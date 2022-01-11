@@ -16,8 +16,64 @@ namespace smDSS
 {
     internal class csvHelper
     {
+        public static void POReader(string csvPath)
+        {
+            using ( var streamReader = new StreamReader(csvPath))
+            {
+                using (var Reader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
+                {
+                    Reader.Context.RegisterClassMap<POClassMap>();
+                    var records = Reader.GetRecords<PurchaseOrders>().ToList();
+                }
+            }
+        }
+        public class POClassMap : ClassMap<PurchaseOrders>
+        {
+            //Header Mapping for the Inventory CSV Reader
+            public POClassMap()
+            {
+                Map(m => m.purchaseordernum).Name("PONum");
+                Map(m => m.vendor).Name("Vendor");
+                Map(m => m.purchaseorderdate).Name("Date");
+                Map(m => m.partnumber).Name("PartNo");
+                Map(m => m.partdescription).Name("PartDesc");
+                Map(m => m.glaccount).Name("GLAcct");
+                Map(m => m.tqtyordered).Name("TotalQtyOrdered");
+                Map(m => m.unitprice).Name("UnitPrice");
+                Map(m => m.linetotal).Name("LineTotal");
+                Map(m => m.duedate).Name("DueDate");
+                Map(m => m.jobnum).Name("JobNo");
+                Map(m => m.qtyordered).Name("QtyOrdered");
+                Map(m => m.qtyreceived).Name("QtyReceived");
+                Map(m => m.qtycanceled).Name("QtyCanceled");
+                Map(m => m.qtyrejected).Name("QtyRejected");
+                Map(m => m.jobnumbersassigned).Name("JobNumbers");
+            }
+
+        }
+        public class PurchaseOrders
+        {
+            //Columns from the Purchase Order Listing csv
+            public double purchaseordernum { get; set; }
+            public string vendor { get; set; }
+            public string purchaseorderdate { get; set; }
+            public string partnumber { get; set; }
+            public string partdescription { get; set; }
+            public string glaccount { get; set; }
+            public string tqtyordered { get; set; }
+            public string unitprice { get; set; }
+            public string linetotal { get; set; }
+            public string duedate { get; set; }
+            public string jobnum { get; set; }
+            public string qtyordered { get; set; }
+            public string qtyreceived { get; set; }
+            public string qtycanceled { get; set; }
+            public string qtyrejected { get; set; }
+            public string jobnumbersassigned { get; set; }
+        }
         //csvPath is passed through from the Form Admin after the path is selected from the system dialog. 
         //InventoryReader() can also be called by pressing the refresh button on the main form to refresh the data tables.
+
         public static void InventoryReader(string csvPath)
         {
           
@@ -27,9 +83,7 @@ namespace smDSS
                 {
                     Reader.Context.RegisterClassMap<InventoryClassMap>();
                     var records = Reader.GetRecords<Inventory>().ToList();
-
-
-                    
+                                        
                     DataTable inventory = new DataTable();
                    
 

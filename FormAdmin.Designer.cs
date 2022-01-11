@@ -39,6 +39,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.inventorydataview = new System.Windows.Forms.DataGridView();
+            this.POpath = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.AdminTabControl.SuspendLayout();
             this.InventoryTab.SuspendLayout();
@@ -50,15 +51,16 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 99.99999F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.inventoryPath, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.POpath, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 100);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 71);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // inventoryPath
@@ -157,6 +159,18 @@
             this.inventorydataview.Size = new System.Drawing.Size(793, 289);
             this.inventorydataview.TabIndex = 0;
             // 
+            // POpath
+            // 
+            this.POpath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.POpath.Location = new System.Drawing.Point(3, 38);
+            this.POpath.Name = "POpath";
+            this.POpath.Size = new System.Drawing.Size(170, 30);
+            this.POpath.TabIndex = 1;
+            this.POpath.TabStop = false;
+            this.POpath.Text = "PO.csv Path";
+            this.POpath.UseVisualStyleBackColor = true;
+            this.POpath.Click += new System.EventHandler(this.POpath_Click);
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,5 +205,6 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button POpath;
     }
 }

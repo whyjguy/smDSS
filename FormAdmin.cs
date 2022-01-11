@@ -28,7 +28,7 @@ namespace smDSS
         private void button1_Click(object sender, EventArgs e)
         {
             
-            //File browser for finding inventory.csv file saves path to the string sSelectedFile
+            //File browser for finding inventory.csv file saves path to the string filename
             OpenFileDialog inventorycsvpath = new OpenFileDialog();
             inventorycsvpath.Filter = "All Files (*.csv)|*.csv*";
             inventorycsvpath.FilterIndex = 1;
@@ -55,6 +55,27 @@ namespace smDSS
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void POpath_Click(object sender, EventArgs e)
+        {
+            //File browser for finding PO.csv file saves path to the string filename
+            OpenFileDialog POcsvpath = new OpenFileDialog();
+            POcsvpath.Filter = "All Files (*.csv)|*.csv*";
+            POcsvpath.FilterIndex = 1;
+
+            string filename = new SelectedFile().FileName;
+
+            if (POcsvpath.ShowDialog() == DialogResult.OK)
+            {
+
+                filename = POcsvpath.FileName;
+                csvHelper.POReader(filename);
+
+
+                // Debug message box               
+                // MessageBox.Show(sSelectedFile);
+            }
         }
     }
     
