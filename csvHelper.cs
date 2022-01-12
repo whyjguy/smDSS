@@ -24,6 +24,9 @@ namespace smDSS
                 {
                     Reader.Context.RegisterClassMap<POClassMap>();
                     var records = Reader.GetRecords<PurchaseOrders>().ToList();
+                    
+
+                    
                 }
             }
         }
@@ -83,9 +86,13 @@ namespace smDSS
                 {
                     Reader.Context.RegisterClassMap<InventoryClassMap>();
                     var records = Reader.GetRecords<Inventory>().ToList();
-                                        
+                    
+                    SMDataSet.InventoryDataTable inventoryTable = new SMDataSet.InventoryDataTable();
+                    SMDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter = new SMDataSetTableAdapters.InventoryTableAdapter();
+                    
+
                     DataTable inventory = new DataTable();
-                   
+                    
 
                     inventory.Columns.Add("PartNumber");
                     inventory.Columns.Add("Unit1");
@@ -103,6 +110,7 @@ namespace smDSS
                     inventory.Columns.Add("UnitCost");
                     inventory.Columns.Add("OnHandCost");
                     inventory.Columns.Add("Bins");
+                    
 
                     foreach (var record in records)
                     {
@@ -123,8 +131,12 @@ namespace smDSS
                         row["UnitCost"] = record.unitcost;
                         row["OnHandCost"] = record.onhandcost;
                         row["Bins"] = record.bins;
+                        
 
-                        inventory.Rows.Add(row);                                             
+
+                        inventory.Rows.Add(row);
+                        inventoryTable.ImportRow(row);
+                        
                     }
 
                    
@@ -158,6 +170,7 @@ namespace smDSS
                 Map(m => m.unitcost).Name("UnitCost");
                 Map(m => m.onhandcost).Name("OnHandCost");
                 Map(m => m.bins).Name("Bins");
+               
             }
 
         } 
@@ -180,6 +193,8 @@ namespace smDSS
             public string unitcost { get; set; }
             public string onhandcost { get; set; }
             public string bins { get; set; }
+
+            public int Id { get; set; }
         }
     }
 }
