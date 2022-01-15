@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace smDSS
 {
@@ -46,6 +48,23 @@ namespace smDSS
                 // MessageBox.Show(sSelectedFile);
             }
 
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string sqldv = "SELECT * FROM Inventory";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqldv, sqlConnection);
+            sqlConnection.Open();
+            DataSet ds = new DataSet();
+            sqlDataAdapter.Fill(ds, "Inventory_Member");
+            sqlConnection.Close();
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = ds;
+            inventorydataview.DataSource = bindingSource;
+            inventorydataview.DataMember = "Inventory_Member";
+            inventorydataview.Refresh();
+            bindingSource.ResetBindings(true);
+            
         }
         public  class SelectedFile
         {
@@ -54,7 +73,9 @@ namespace smDSS
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
-            
+           
+           
+
         }
 
         private void POpath_Click(object sender, EventArgs e)

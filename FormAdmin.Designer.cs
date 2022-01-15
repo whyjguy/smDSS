@@ -28,23 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.inventoryPath = new System.Windows.Forms.Button();
+            this.POpath = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.AdminTabControl = new System.Windows.Forms.TabControl();
             this.InventoryTab = new System.Windows.Forms.TabPage();
+            this.inventorydataview = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.inventorydataview = new System.Windows.Forms.DataGridView();
-            this.POpath = new System.Windows.Forms.Button();
+            this.sMDataSet = new smDSS.SMDataSet();
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryTableAdapter = new smDSS.SMDataSetTableAdapters.InventoryTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.AdminTabControl.SuspendLayout();
             this.InventoryTab.SuspendLayout();
-            this.tabControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventorydataview)).BeginInit();
+            this.tabControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -74,6 +80,18 @@
             this.inventoryPath.UseVisualStyleBackColor = true;
             this.inventoryPath.Click += new System.EventHandler(this.button1_Click);
             // 
+            // POpath
+            // 
+            this.POpath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.POpath.Location = new System.Drawing.Point(3, 38);
+            this.POpath.Name = "POpath";
+            this.POpath.Size = new System.Drawing.Size(170, 30);
+            this.POpath.TabIndex = 1;
+            this.POpath.TabStop = false;
+            this.POpath.Text = "PO.csv Path";
+            this.POpath.UseVisualStyleBackColor = true;
+            this.POpath.Click += new System.EventHandler(this.POpath_Click);
+            // 
             // folderBrowserDialog1
             // 
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
@@ -83,10 +101,11 @@
             this.AdminTabControl.Controls.Add(this.InventoryTab);
             this.AdminTabControl.Controls.Add(this.tabPage2);
             this.AdminTabControl.Controls.Add(this.tabPage5);
-            this.AdminTabControl.Location = new System.Drawing.Point(12, 107);
+            this.AdminTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdminTabControl.Location = new System.Drawing.Point(0, 71);
             this.AdminTabControl.Name = "AdminTabControl";
             this.AdminTabControl.SelectedIndex = 0;
-            this.AdminTabControl.Size = new System.Drawing.Size(807, 321);
+            this.AdminTabControl.Size = new System.Drawing.Size(831, 369);
             this.AdminTabControl.TabIndex = 1;
             // 
             // InventoryTab
@@ -95,10 +114,22 @@
             this.InventoryTab.Location = new System.Drawing.Point(4, 22);
             this.InventoryTab.Name = "InventoryTab";
             this.InventoryTab.Padding = new System.Windows.Forms.Padding(3);
-            this.InventoryTab.Size = new System.Drawing.Size(799, 295);
+            this.InventoryTab.Size = new System.Drawing.Size(823, 343);
             this.InventoryTab.TabIndex = 0;
             this.InventoryTab.Text = "Inventory Data";
             this.InventoryTab.UseVisualStyleBackColor = true;
+            // 
+            // inventorydataview
+            // 
+            this.inventorydataview.AllowUserToOrderColumns = true;
+            this.inventorydataview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.inventorydataview.BackgroundColor = System.Drawing.Color.Aquamarine;
+            this.inventorydataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventorydataview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inventorydataview.Location = new System.Drawing.Point(3, 3);
+            this.inventorydataview.Name = "inventorydataview";
+            this.inventorydataview.Size = new System.Drawing.Size(817, 337);
+            this.inventorydataview.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -109,6 +140,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(799, 295);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
@@ -140,36 +181,19 @@
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
+            // sMDataSet
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(799, 295);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.sMDataSet.DataSetName = "SMDataSet";
+            this.sMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // inventorydataview
+            // inventoryBindingSource
             // 
-            this.inventorydataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventorydataview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inventorydataview.Location = new System.Drawing.Point(3, 3);
-            this.inventorydataview.Name = "inventorydataview";
-            this.inventorydataview.Size = new System.Drawing.Size(793, 289);
-            this.inventorydataview.TabIndex = 0;
+            this.inventoryBindingSource.DataMember = "Inventory";
+            this.inventoryBindingSource.DataSource = this.sMDataSet;
             // 
-            // POpath
+            // inventoryTableAdapter
             // 
-            this.POpath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.POpath.Location = new System.Drawing.Point(3, 38);
-            this.POpath.Name = "POpath";
-            this.POpath.Size = new System.Drawing.Size(170, 30);
-            this.POpath.TabIndex = 1;
-            this.POpath.TabStop = false;
-            this.POpath.Text = "PO.csv Path";
-            this.POpath.UseVisualStyleBackColor = true;
-            this.POpath.Click += new System.EventHandler(this.POpath_Click);
+            this.inventoryTableAdapter.ClearBeforeFill = true;
             // 
             // FormAdmin
             // 
@@ -186,8 +210,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.AdminTabControl.ResumeLayout(false);
             this.InventoryTab.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventorydataview)).EndInit();
+            this.tabControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +232,8 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button POpath;
+        private SMDataSet sMDataSet;
+        private System.Windows.Forms.BindingSource inventoryBindingSource;
+        private SMDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
     }
 }

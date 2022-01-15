@@ -93,20 +93,8 @@ namespace smDSS
                 {
                     Reader.Context.RegisterClassMap<InventoryClassMap>();
                     var records = Reader.GetRecords<Inventory>().ToArray();
-
-
-
-
-
-
-                    //SQL open
-
-                    string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
-
-                    SqlConnection sqlConnection = new SqlConnection(connectionString);
-                    
+ 
                     DataTable inventory = new DataTable();
-
 
                     inventory.Columns.Add("ID");
                     inventory.Columns.Add("PartNumber");
@@ -125,13 +113,12 @@ namespace smDSS
                     inventory.Columns.Add("UnitCost");
                     inventory.Columns.Add("OnHandCost");
                     inventory.Columns.Add("Bins");
-                   
-                                      
+                    
+                    //Adds each record from CSVReader into the temp table inventory
                     foreach (var record in records)
                     {                       
                         DataRow row = inventory.NewRow();
-                        
-                        
+                                                
                         row["PartNumber"] = record.partnumber;
                         row["Unit1"] = record.unit1;
                         row["PartDescription"] = record.partdescription;
@@ -148,13 +135,21 @@ namespace smDSS
                         row["UnitCost"] = record.unitcost;
                         row["OnHandCost"] = record.onhandcost;
                         row["Bins"] = record.bins;
-                        
-                        
+                                                
                         inventory.Rows.Add(row);
 
-                     
                     }
+                    //Update records to Database: Inventory Table
+                    //Opens SQL Connection to database
+                    //Clears all records from table Inventory
+                    //BulkCopies all records from CSVHelper Table inventory to SQL Database Inventory
+
+                    string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
+
+                    SqlConnection sqlConnection = new SqlConnection(connectionString);
                     sqlConnection.Open();
+
+                    //Delete old records
                     SqlCommand dCommand;
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     String dSql = "";
@@ -165,7 +160,9 @@ namespace smDSS
                     adapter.DeleteCommand.ExecuteNonQuery();
                     dCommand.Dispose();
 
+                    //Copy in new records
                     SqlBulkCopy bulkCopy = new SqlBulkCopy(sqlConnection);
+                    //BulkCopy columnMappings
                     bulkCopy.DestinationTableName = "Inventory";
                     bulkCopy.ColumnMappings.Add("PartNumber", "PartNumber");
                     bulkCopy.ColumnMappings.Add("Unit1", "Unit1");
@@ -183,18 +180,16 @@ namespace smDSS
                     bulkCopy.ColumnMappings.Add("UnitCost", "UnitCost");
                     bulkCopy.ColumnMappings.Add("OnHandCost", "OnHandCost");
                     bulkCopy.ColumnMappings.Add("Bins", "Bins");
-                 
+                    //Writes all records to sqlConnection (Inventory Table)
                     bulkCopy.WriteToServer(inventory);
                     sqlConnection.Close();
                     
 
                 }
             }
-
-      
-    }
+        }
        
-
+        //ClassMapping for the temp table inventory
         public class InventoryClassMap : ClassMap<Inventory>
         {
             //Header Mapping for the Inventory CSV Reader
@@ -220,6 +215,7 @@ namespace smDSS
             }
 
         } 
+        //Column Name strings for the temp tabel inventory
         public class Inventory
         {
             //Columns from the PN Inventory Listing csv
@@ -240,7 +236,6 @@ namespace smDSS
             public string onhandcost { get; set; }
             public string bins { get; set; }
 
-          
         }
     }
 }
