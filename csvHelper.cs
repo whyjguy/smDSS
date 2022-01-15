@@ -154,6 +154,16 @@ namespace smDSS
 
                      
                     }
+                    sqlConnection.Open();
+                    SqlCommand dCommand;
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    String dSql = "";
+                    dSql = "DELETE Inventory WHERE Id LIKE '%'";
+                    dCommand = new SqlCommand(dSql, sqlConnection);
+
+                    adapter.DeleteCommand = new SqlCommand(dSql,sqlConnection);
+                    adapter.DeleteCommand.ExecuteNonQuery();
+                    dCommand.Dispose();
 
                     SqlBulkCopy bulkCopy = new SqlBulkCopy(sqlConnection);
                     bulkCopy.DestinationTableName = "Inventory";
@@ -173,7 +183,7 @@ namespace smDSS
                     bulkCopy.ColumnMappings.Add("UnitCost", "UnitCost");
                     bulkCopy.ColumnMappings.Add("OnHandCost", "OnHandCost");
                     bulkCopy.ColumnMappings.Add("Bins", "Bins");
-                    sqlConnection.Open();
+                 
                     bulkCopy.WriteToServer(inventory);
                     sqlConnection.Close();
                     
