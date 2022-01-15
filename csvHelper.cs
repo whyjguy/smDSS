@@ -11,6 +11,13 @@ using CsvHelper.Configuration.Attributes;
 using CsvHelper.TypeConversion;
 using System.Data;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data.Sql;
+using System.Data.SqlTypes;
+using System.Configuration;
+
+
+
 
 namespace smDSS
 {
@@ -85,15 +92,19 @@ namespace smDSS
                 using (var Reader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
                 {
                     Reader.Context.RegisterClassMap<InventoryClassMap>();
-                    var records = Reader.GetRecords<Inventory>().ToList();
-                    
-                    SMDataSet.InventoryDataTable inventoryTable = new SMDataSet.InventoryDataTable();
-                    SMDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter = new SMDataSetTableAdapters.InventoryTableAdapter();
-                    
+                    var records = Reader.GetRecords<Inventory>().ToArray();
 
+                  //  string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True";
+
+               //     SqlConnection sqlConnection = new SqlConnection(connectionString);
+                    
+               //     sqlConnection.Open();
+                                                 
+                   
                     DataTable inventory = new DataTable();
                     
-
+                    
+                    inventory.Columns.Add("Id");
                     inventory.Columns.Add("PartNumber");
                     inventory.Columns.Add("Unit1");
                     inventory.Columns.Add("PartDescription");
@@ -111,10 +122,11 @@ namespace smDSS
                     inventory.Columns.Add("OnHandCost");
                     inventory.Columns.Add("Bins");
                     
-
+                                      
                     foreach (var record in records)
-                    {
+                    {                       
                         DataRow row = inventory.NewRow();
+                        
                         row["PartNumber"] = record.partnumber;
                         row["Unit1"] = record.unit1;
                         row["PartDescription"] = record.partdescription;
@@ -132,14 +144,41 @@ namespace smDSS
                         row["OnHandCost"] = record.onhandcost;
                         row["Bins"] = record.bins;
                         
-
-
                         inventory.Rows.Add(row);
-                        inventoryTable.ImportRow(row);
-                        
+                     }
+
+
+                    //    sqlConnection.Close();
+
+                    string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True; Initial Catalog=dbo.Inventory";
+
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
+                        {
+                            foreach (DataColumn c in inventory.Columns)
+                            {
+
+                                bulkCopy.ColumnMappings.Add(c.ColumnName, c.ColumnName);
+
+                            }
+                            bulkCopy.DestinationTableName = "dbo.Inventory";
+
+                            try
+                            {
+                                bulkCopy.WriteToServer(inventory);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.ToString());
+                            }
+                        }
+                        connection.Close();
                     }
 
-                   
+
+
 
 
                 }
@@ -147,8 +186,8 @@ namespace smDSS
 
       
     }
-
        
+
         public class InventoryClassMap : ClassMap<Inventory>
         {
             //Header Mapping for the Inventory CSV Reader
@@ -194,7 +233,7 @@ namespace smDSS
             public string onhandcost { get; set; }
             public string bins { get; set; }
 
-            public int Id { get; set; }
+          
         }
     }
 }
