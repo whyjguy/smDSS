@@ -34,6 +34,7 @@
             this.PNtextbox = new System.Windows.Forms.TextBox();
             this.qtydisplay = new System.Windows.Forms.TextBox();
             this.qtyDisplayLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,22 +45,25 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel1.Controls.Add(this.btnAdmin, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.ClearPNText, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.PNtextbox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.qtydisplay, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.qtyDisplayLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnAdmin, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.ClearPNText, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.PNtextbox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.qtydisplay, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.qtyDisplayLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(340, 480);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(830, 480);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -77,7 +81,7 @@
             // ClearPNText
             // 
             this.ClearPNText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClearPNText.Location = new System.Drawing.Point(3, 3);
+            this.ClearPNText.Location = new System.Drawing.Point(3, 23);
             this.ClearPNText.Name = "ClearPNText";
             this.ClearPNText.Size = new System.Drawing.Size(83, 25);
             this.ClearPNText.TabIndex = 1;
@@ -91,7 +95,7 @@
             this.PNtextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.PNtextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
             this.PNtextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PNtextbox.Location = new System.Drawing.Point(92, 3);
+            this.PNtextbox.Location = new System.Drawing.Point(92, 23);
             this.PNtextbox.Multiline = true;
             this.PNtextbox.Name = "PNtextbox";
             this.PNtextbox.Size = new System.Drawing.Size(131, 25);
@@ -100,8 +104,8 @@
             // 
             // qtydisplay
             // 
-            this.qtydisplay.Dock = System.Windows.Forms.DockStyle.Right;
-            this.qtydisplay.Location = new System.Drawing.Point(128, 34);
+            this.qtydisplay.Dock = System.Windows.Forms.DockStyle.Left;
+            this.qtydisplay.Location = new System.Drawing.Point(92, 54);
             this.qtydisplay.Multiline = true;
             this.qtydisplay.Name = "qtydisplay";
             this.qtydisplay.Size = new System.Drawing.Size(95, 20);
@@ -113,13 +117,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.qtyDisplayLabel.AutoSize = true;
-            this.qtyDisplayLabel.Location = new System.Drawing.Point(3, 31);
+            this.qtyDisplayLabel.Location = new System.Drawing.Point(3, 51);
             this.qtyDisplayLabel.Name = "qtyDisplayLabel";
             this.qtyDisplayLabel.Size = new System.Drawing.Size(83, 26);
             this.qtyDisplayLabel.TabIndex = 4;
             this.qtyDisplayLabel.Text = "Qty On Hand";
             this.qtyDisplayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.qtyDisplayLabel.Click += new System.EventHandler(this.qtyDisplayLabel_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(92, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Enter Part Number";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // MainForm
             // 
@@ -145,6 +160,7 @@
         private System.Windows.Forms.TextBox PNtextbox;
         private System.Windows.Forms.TextBox qtydisplay;
         private System.Windows.Forms.Label qtyDisplayLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -51,7 +51,8 @@ namespace smDSS
 
         private void PNtextbox_TextChanged(object sender, EventArgs e)
         {
-            
+            //Opens connection to Inventory and reads the text box PNTextbox then applies that value to a Query and exact matches
+            //Then it updates the qtydisplay text box with the QuantityOnHand column matching that PN
             string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -71,22 +72,12 @@ namespace smDSS
                 {
                     reader.Close();
                 }
-
-                
             }
-
-
-
-
-
-
-
-
-
         }
 
         private void ClearPNText_Click(object sender, EventArgs e)
         {
+            //Resets form
             PNtextbox.Text = "";
             qtydisplay.Text = "";
         }
