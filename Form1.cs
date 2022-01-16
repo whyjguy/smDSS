@@ -57,10 +57,10 @@ namespace smDSS
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string pnselect = PNtextbox.Text;
-                string sql = "SELECT QtyOnHand FROM Inventory WHERE PartNumber = '" + pnselect + "'";
-                SqlCommand command = new SqlCommand(sql, connection);
+                string pnsql = "SELECT QtyOnHand FROM Inventory WHERE PartNumber = '" + pnselect + "'";
+                SqlCommand pncommand = new SqlCommand(pnsql, connection);
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = pncommand.ExecuteReader();
                 try
                 {
                     while (reader.Read())
@@ -72,6 +72,35 @@ namespace smDSS
                 {
                     reader.Close();
                 }
+
+                string posql = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) <= 1 AND YEAR(DueDate) <= 2022 AND QtyReceived != QtyOrdered";
+               // SqlCommand pocommand = new SqlCommand(posql, connection);
+              // SqlDataReader poreader = pocommand.ExecuteReader();
+
+                using (SqlCommand pocommand = new SqlCommand(posql, connection))
+                {
+                    
+                    QtyOnOrder1.Text = pocommand.ExecuteScalar().ToString();
+                }
+
+
+/*
+               try
+
+
+
+                {
+                    while(poreader.Read())
+                    {
+                        QtyOnOrder1.Text = Convert.ToString(poreader);
+                    }
+                }
+                finally
+                {
+                    poreader.Close();
+                }
+
+*/
                 connection.Close();
             }
         }
@@ -81,6 +110,7 @@ namespace smDSS
             //Resets form
             PNtextbox.Text = "";
             qtydisplay.Text = "";
+            QtyOnOrder1.Text = "";
         }
     }
 }
