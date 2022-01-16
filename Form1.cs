@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace smDSS
 {
@@ -40,6 +42,53 @@ namespace smDSS
         private void MainForm_Load(object sender, EventArgs e)
         {
           
+        }
+
+        private void qtyDisplayLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PNtextbox_TextChanged(object sender, EventArgs e)
+        {
+            
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string pnselect = PNtextbox.Text;
+                string sql = "SELECT QtyOnHand FROM Inventory WHERE PartNumber = '" + pnselect + "'";
+                SqlCommand command = new SqlCommand(sql, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        qtydisplay.Text = reader.GetString(0);
+                    }
+                }
+                finally
+                {
+                    reader.Close();
+                }
+
+                
+            }
+
+
+
+
+
+
+
+
+
+        }
+
+        private void ClearPNText_Click(object sender, EventArgs e)
+        {
+            PNtextbox.Text = "";
+            qtydisplay.Text = "";
         }
     }
 }
