@@ -49,23 +49,26 @@ namespace smDSS
             }
             //opens connection string and populates inventoryDataView on tab one of the admin page with data
 
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True";
 
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            string sqldv = "SELECT * FROM Inventory";
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqldv, sqlConnection);
-            sqlConnection.Open();
-            DataSet ds = new DataSet();
-            sqlDataAdapter.Fill(ds, "Inventory_Member");
-            sqlConnection.Close();
-            //Updates the binding and data on the datagridview
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = ds;
-            inventorydataview.DataSource = bindingSource;
-            inventorydataview.DataMember = "Inventory_Member";
-            inventorydataview.Refresh();
-            bindingSource.ResetBindings(true);
-            
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+
+
+                string sqldv = "SELECT * FROM Inventory";
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqldv, sqlConnection);
+                sqlConnection.Open();
+                DataSet ds = new DataSet();
+                sqlDataAdapter.Fill(ds, "Inventory_Member");
+                sqlConnection.Close();
+                //Updates the binding and data on the datagridview
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = ds;
+                inventorydataview.DataSource = bindingSource;
+                inventorydataview.DataMember = "Inventory_Member";
+                inventorydataview.Refresh();
+                bindingSource.ResetBindings(true);
+            }
         }
         public  class SelectedFile
         {
@@ -74,23 +77,29 @@ namespace smDSS
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True";
 
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            string sqldv = "SELECT * FROM Inventory";
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqldv, sqlConnection);
-            sqlConnection.Open();
-            DataSet ds = new DataSet();
-            sqlDataAdapter.Fill(ds, "Inventory_Member");
-            sqlConnection.Close();
-            //Updates the binding and data on the datagridview
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = ds;
-            inventorydataview.DataSource = bindingSource;
-            inventorydataview.DataMember = "Inventory_Member";
-            inventorydataview.Refresh();
-            bindingSource.ResetBindings(true);
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
 
+
+                string sqldv = "SELECT * FROM Inventory";
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqldv, sqlConnection);
+                sqlConnection.Open();
+                DataSet ds = new DataSet();
+                sqlDataAdapter.Fill(ds, "Inventory_Member");
+                sqlConnection.Close();
+                //Updates the binding and data on the datagridview
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = ds;
+                inventorydataview.DataSource = bindingSource;
+                inventorydataview.DataMember = "Inventory_Member";
+                inventorydataview.Refresh();
+                bindingSource.ResetBindings(true);
+            }
+
+
+            
         }
 
         private void POpath_Click(object sender, EventArgs e)
@@ -111,7 +120,34 @@ namespace smDSS
 
                 // Debug message box               
                 // MessageBox.Show(sSelectedFile);
+
+
+
             }
+            
+            
+            //opens connection string and populates PODataView on tab two of the admin page with data
+
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+
+                string sqldv = "SELECT * FROM PurchaseOrders";
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqldv, sqlConnection);
+                sqlConnection.Open();
+                DataSet ds = new DataSet();
+                sqlDataAdapter.Fill(ds, "PurchaseOrders_Member");
+                sqlConnection.Close();
+                //Updates the binding and data on the datagridview
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = ds;
+                PODataView.DataSource = bindingSource;
+                PODataView.DataMember = "PurchaseOrders_Member";
+                PODataView.Refresh();
+                bindingSource.ResetBindings(true);
+            }
+            
         }
     }
     

@@ -31,9 +31,103 @@ namespace smDSS
                 {
                     Reader.Context.RegisterClassMap<POClassMap>();
                     var records = Reader.GetRecords<PurchaseOrders>().ToList();
-                    
+
+                    DataTable purchaseorders = new DataTable();
+
+                    purchaseorders.Columns.Add("ID");
+                    purchaseorders.Columns.Add("PONum");
+                    purchaseorders.Columns.Add("Vendor");
+                    purchaseorders.Columns.Add("Date");
+                    purchaseorders.Columns.Add("PartNo");
+                    purchaseorders.Columns.Add("PartDesc");
+                    purchaseorders.Columns.Add("GLAcct");
+                    purchaseorders.Columns.Add("TotalQtyOrdered");
+                    purchaseorders.Columns.Add("UnitPrice");
+                    purchaseorders.Columns.Add("LineTotal");
+                    purchaseorders.Columns.Add("DueDate");
+                    purchaseorders.Columns.Add("JobNo");
+                    purchaseorders.Columns.Add("QtyOrdered");
+                    purchaseorders.Columns.Add("QtyReceived");
+                    purchaseorders.Columns.Add("QtyCanceled");
+                    purchaseorders.Columns.Add("QtyRejected");
+                    purchaseorders.Columns.Add("JobNumbers");
+
+                    //Adds each record from CSVReader into the temp table purchaseorders
+                    foreach (var record in records)
+                    {
+                        DataRow row = purchaseorders.NewRow();
+
+                        row["PONum"] = record.purchaseordernum;
+                        row["Vendor"] = record.vendor;
+                        row["Date"] = record.purchaseorderdate;
+                        row["PartNo"] = record.partnumber;
+                        row["PartDesc"] = record.partdescription;
+                        row["GLAcct"] = record.glaccount;
+                        row["TotalQtyOrdered"] = record.tqtyordered;
+                        row["UnitPrice"] = record.unitprice;
+                        row["LineTotal"] = record.linetotal;
+                        row["DueDate"] = record.duedate;
+                        row["JobNo"] = record.jobnum;
+                        row["QtyOrdered"] = record.qtyordered;
+                        row["QtyReceived"] = record.qtyreceived;
+                        row["QtyCanceled"] = record.qtycanceled;
+                        row["QtyRejected"] = record.qtyrejected;
+                        row["JobNumbers"] = record.jobnumbersassigned;
+
+                        purchaseorders.Rows.Add(row);
+
+                    }
 
                     
+                    //Update records to Database: PurchaseOrders Table
+                    //Opens SQL Connection to database
+                    //Clears all records from table PurchaseOrders
+                    //BulkCopies all records from CSVHelper Table purchaseorders to SQL Database PurchaseOrders
+
+                    string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True ";
+
+                    using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+                    {
+
+
+                        sqlConnection.Open();
+
+                        //Delete old records
+                        SqlCommand dCommand;
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        String dSql = "";
+                        dSql = "DELETE PurchaseOrders WHERE Id LIKE '%'";
+                        dCommand = new SqlCommand(dSql, sqlConnection);
+
+                        adapter.DeleteCommand = new SqlCommand(dSql, sqlConnection);
+                        adapter.DeleteCommand.ExecuteNonQuery();
+                        dCommand.Dispose();
+
+                        //Copy in new records
+                        SqlBulkCopy bulkCopy = new SqlBulkCopy(sqlConnection);
+                        //BulkCopy columnMappings
+                        bulkCopy.DestinationTableName = "PurchaseOrders";
+                        bulkCopy.ColumnMappings.Add("PONum", "PONum");
+                        bulkCopy.ColumnMappings.Add("Vendor", "Vendor");
+                        bulkCopy.ColumnMappings.Add("Date", "Date");
+                        bulkCopy.ColumnMappings.Add("PartNo", "PartNo");
+                        bulkCopy.ColumnMappings.Add("PartDesc", "PartDesc");
+                        bulkCopy.ColumnMappings.Add("GLAcct", "GLAcct");
+                        bulkCopy.ColumnMappings.Add("TotalQtyOrdered", "TotalQtyOrdered");
+                        bulkCopy.ColumnMappings.Add("UnitPrice", "UnitPrice");
+                        bulkCopy.ColumnMappings.Add("LineTotal", "LineTotal");
+                        bulkCopy.ColumnMappings.Add("DueDate", "DueDate");
+                        bulkCopy.ColumnMappings.Add("JobNo", "JobNo");
+                        bulkCopy.ColumnMappings.Add("QtyOrdered", "QtyOrdered");
+                        bulkCopy.ColumnMappings.Add("QtyReceived", "QtyReceived");
+                        bulkCopy.ColumnMappings.Add("QtyCanceled", "QtyCanceled");
+                        bulkCopy.ColumnMappings.Add("QtyRejected", "QtyRejected");
+                        bulkCopy.ColumnMappings.Add("JobNumbers", "JobNumbers");
+                        //Writes all records to sqlConnection (PurchaseOrders Table)
+                        bulkCopy.WriteToServer(purchaseorders);
+                        sqlConnection.Close();
+
+                    }
                 }
             }
         }
@@ -144,46 +238,49 @@ namespace smDSS
                     //Clears all records from table Inventory
                     //BulkCopies all records from CSVHelper Table inventory to SQL Database Inventory
 
-                    string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
+                    string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True";
 
-                    SqlConnection sqlConnection = new SqlConnection(connectionString);
-                    sqlConnection.Open();
+                    using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+                    {
 
-                    //Delete old records
-                    SqlCommand dCommand;
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    String dSql = "";
-                    dSql = "DELETE Inventory WHERE Id LIKE '%'";
-                    dCommand = new SqlCommand(dSql, sqlConnection);
 
-                    adapter.DeleteCommand = new SqlCommand(dSql,sqlConnection);
-                    adapter.DeleteCommand.ExecuteNonQuery();
-                    dCommand.Dispose();
+                        sqlConnection.Open();
 
-                    //Copy in new records
-                    SqlBulkCopy bulkCopy = new SqlBulkCopy(sqlConnection);
-                    //BulkCopy columnMappings
-                    bulkCopy.DestinationTableName = "Inventory";
-                    bulkCopy.ColumnMappings.Add("PartNumber", "PartNumber");
-                    bulkCopy.ColumnMappings.Add("Unit1", "Unit1");
-                    bulkCopy.ColumnMappings.Add("PartDescription", "PartDescription");
-                    bulkCopy.ColumnMappings.Add("VendorCode", "VendorCode");
-                    bulkCopy.ColumnMappings.Add("CustomerCode", "CustomerCode");
-                    bulkCopy.ColumnMappings.Add("GLCode", "GLCode");
-                    bulkCopy.ColumnMappings.Add("ProductCode", "ProductCode");
-                    bulkCopy.ColumnMappings.Add("QtyInProcess", "QtyInProcess");
-                    bulkCopy.ColumnMappings.Add("QtyOnOrder", "QtyOnOrder");
-                    bulkCopy.ColumnMappings.Add("QtyReserved", "QtyReserved");
-                    bulkCopy.ColumnMappings.Add("QtyConsumed", "QtyConsumed");
-                    bulkCopy.ColumnMappings.Add("QtyOutside", "QtyOutside");
-                    bulkCopy.ColumnMappings.Add("QtyOnHand", "QtyOnHand");
-                    bulkCopy.ColumnMappings.Add("UnitCost", "UnitCost");
-                    bulkCopy.ColumnMappings.Add("OnHandCost", "OnHandCost");
-                    bulkCopy.ColumnMappings.Add("Bins", "Bins");
-                    //Writes all records to sqlConnection (Inventory Table)
-                    bulkCopy.WriteToServer(inventory);
-                    sqlConnection.Close();
-                    
+                        //Delete old records
+                        SqlCommand dCommand;
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        String dSql = "";
+                        dSql = "DELETE Inventory WHERE Id LIKE '%'";
+                        dCommand = new SqlCommand(dSql, sqlConnection);
+
+                        adapter.DeleteCommand = new SqlCommand(dSql, sqlConnection);
+                        adapter.DeleteCommand.ExecuteNonQuery();
+                        dCommand.Dispose();
+
+                        //Copy in new records
+                        SqlBulkCopy bulkCopy = new SqlBulkCopy(sqlConnection);
+                        //BulkCopy columnMappings
+                        bulkCopy.DestinationTableName = "Inventory";
+                        bulkCopy.ColumnMappings.Add("PartNumber", "PartNumber");
+                        bulkCopy.ColumnMappings.Add("Unit1", "Unit1");
+                        bulkCopy.ColumnMappings.Add("PartDescription", "PartDescription");
+                        bulkCopy.ColumnMappings.Add("VendorCode", "VendorCode");
+                        bulkCopy.ColumnMappings.Add("CustomerCode", "CustomerCode");
+                        bulkCopy.ColumnMappings.Add("GLCode", "GLCode");
+                        bulkCopy.ColumnMappings.Add("ProductCode", "ProductCode");
+                        bulkCopy.ColumnMappings.Add("QtyInProcess", "QtyInProcess");
+                        bulkCopy.ColumnMappings.Add("QtyOnOrder", "QtyOnOrder");
+                        bulkCopy.ColumnMappings.Add("QtyReserved", "QtyReserved");
+                        bulkCopy.ColumnMappings.Add("QtyConsumed", "QtyConsumed");
+                        bulkCopy.ColumnMappings.Add("QtyOutside", "QtyOutside");
+                        bulkCopy.ColumnMappings.Add("QtyOnHand", "QtyOnHand");
+                        bulkCopy.ColumnMappings.Add("UnitCost", "UnitCost");
+                        bulkCopy.ColumnMappings.Add("OnHandCost", "OnHandCost");
+                        bulkCopy.ColumnMappings.Add("Bins", "Bins");
+                        //Writes all records to sqlConnection (Inventory Table)
+                        bulkCopy.WriteToServer(inventory);
+                        sqlConnection.Close();
+                    }
 
                 }
             }

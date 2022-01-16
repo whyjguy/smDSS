@@ -44,13 +44,16 @@
             this.sMDataSet = new smDSS.SMDataSet();
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryTableAdapter = new smDSS.SMDataSetTableAdapters.InventoryTableAdapter();
+            this.PODataView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.AdminTabControl.SuspendLayout();
             this.InventoryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventorydataview)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PODataView)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -133,10 +136,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.PODataView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(799, 295);
+            this.tabPage2.Size = new System.Drawing.Size(823, 343);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -146,7 +150,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(799, 295);
+            this.tabPage5.Size = new System.Drawing.Size(823, 343);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -195,6 +199,15 @@
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
             // 
+            // PODataView
+            // 
+            this.PODataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PODataView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PODataView.Location = new System.Drawing.Point(3, 3);
+            this.PODataView.Name = "PODataView";
+            this.PODataView.Size = new System.Drawing.Size(817, 337);
+            this.PODataView.TabIndex = 0;
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,9 +224,11 @@
             this.AdminTabControl.ResumeLayout(false);
             this.InventoryTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventorydataview)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PODataView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,5 +250,6 @@
         private SMDataSet sMDataSet;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
         private SMDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
+        private System.Windows.Forms.DataGridView PODataView;
     }
 }

@@ -20,9 +20,9 @@ namespace smDSS
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
+       {
 
-        }
+       }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
@@ -53,7 +53,7 @@ namespace smDSS
         {
             //Opens connection to Inventory and reads the text box PNTextbox then applies that value to a Query and exact matches
             //Then it updates the qtydisplay text box with the QuantityOnHand column matching that PN
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True;Initial Catalog=Inventory ";
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string pnselect = PNtextbox.Text;
@@ -72,6 +72,7 @@ namespace smDSS
                 {
                     reader.Close();
                 }
+                connection.Close();
             }
         }
 

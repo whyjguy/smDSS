@@ -35,44 +35,72 @@
             this.qtydisplay = new System.Windows.Forms.TextBox();
             this.qtyDisplayLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LeadTimeProgrammed = new System.Windows.Forms.TextBox();
+            this.LeadTimeE2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel1.Controls.Add(this.btnAdmin, 0, 7);
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
             this.tableLayoutPanel1.Controls.Add(this.ClearPNText, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.PNtextbox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.qtydisplay, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.qtyDisplayLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.LeadTimeProgrammed, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.LeadTimeE2, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnAdmin, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 5, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 12;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(830, 480);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(830, 600);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // btnAdmin
             // 
             this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdmin.Location = new System.Drawing.Point(3, 454);
+            this.btnAdmin.Location = new System.Drawing.Point(3, 573);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(83, 23);
+            this.btnAdmin.Size = new System.Drawing.Size(84, 24);
             this.btnAdmin.TabIndex = 0;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
@@ -81,9 +109,10 @@
             // ClearPNText
             // 
             this.ClearPNText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClearPNText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ClearPNText.Location = new System.Drawing.Point(3, 23);
             this.ClearPNText.Name = "ClearPNText";
-            this.ClearPNText.Size = new System.Drawing.Size(83, 25);
+            this.ClearPNText.Size = new System.Drawing.Size(84, 25);
             this.ClearPNText.TabIndex = 1;
             this.ClearPNText.Text = "Clear Text";
             this.ClearPNText.UseVisualStyleBackColor = true;
@@ -95,53 +124,162 @@
             this.PNtextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.PNtextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
             this.PNtextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PNtextbox.Location = new System.Drawing.Point(92, 23);
+            this.PNtextbox.Location = new System.Drawing.Point(93, 23);
             this.PNtextbox.Multiline = true;
             this.PNtextbox.Name = "PNtextbox";
-            this.PNtextbox.Size = new System.Drawing.Size(131, 25);
+            this.PNtextbox.Size = new System.Drawing.Size(130, 25);
             this.PNtextbox.TabIndex = 2;
             this.PNtextbox.TextChanged += new System.EventHandler(this.PNtextbox_TextChanged);
             // 
             // qtydisplay
             // 
-            this.qtydisplay.Dock = System.Windows.Forms.DockStyle.Left;
-            this.qtydisplay.Location = new System.Drawing.Point(92, 54);
+            this.qtydisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.qtydisplay.Location = new System.Drawing.Point(93, 54);
             this.qtydisplay.Multiline = true;
             this.qtydisplay.Name = "qtydisplay";
-            this.qtydisplay.Size = new System.Drawing.Size(95, 20);
+            this.qtydisplay.Size = new System.Drawing.Size(130, 20);
             this.qtydisplay.TabIndex = 3;
             // 
             // qtyDisplayLabel
             // 
-            this.qtyDisplayLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.qtyDisplayLabel.AutoSize = true;
+            this.qtyDisplayLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.qtyDisplayLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.qtyDisplayLabel.Location = new System.Drawing.Point(3, 51);
             this.qtyDisplayLabel.Name = "qtyDisplayLabel";
-            this.qtyDisplayLabel.Size = new System.Drawing.Size(83, 26);
+            this.qtyDisplayLabel.Size = new System.Drawing.Size(84, 26);
             this.qtyDisplayLabel.TabIndex = 4;
             this.qtyDisplayLabel.Text = "Qty On Hand";
-            this.qtyDisplayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.qtyDisplayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.qtyDisplayLabel.Click += new System.EventHandler(this.qtyDisplayLabel_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(92, 0);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(93, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.Size = new System.Drawing.Size(130, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Enter Part Number";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(355, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 23);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Jan \'22";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(3, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 28);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Lead Time (Programmed)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LeadTimeProgrammed
+            // 
+            this.LeadTimeProgrammed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LeadTimeProgrammed.Location = new System.Drawing.Point(93, 103);
+            this.LeadTimeProgrammed.Multiline = true;
+            this.LeadTimeProgrammed.Name = "LeadTimeProgrammed";
+            this.LeadTimeProgrammed.Size = new System.Drawing.Size(130, 22);
+            this.LeadTimeProgrammed.TabIndex = 8;
+            // 
+            // LeadTimeE2
+            // 
+            this.LeadTimeE2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LeadTimeE2.Location = new System.Drawing.Point(93, 131);
+            this.LeadTimeE2.Multiline = true;
+            this.LeadTimeE2.Name = "LeadTimeE2";
+            this.LeadTimeE2.Size = new System.Drawing.Size(130, 26);
+            this.LeadTimeE2.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(3, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Lead Time (E2)";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Location = new System.Drawing.Point(229, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 28);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Qty On Hand";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(229, 128);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 32);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Qty Reserved";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Location = new System.Drawing.Point(229, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 26);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "On Order";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Location = new System.Drawing.Point(468, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 23);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Feb \'22";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(573, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(102, 23);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Mar \'22";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(952, 480);
+            this.ClientSize = new System.Drawing.Size(1031, 600);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainForm";
             this.Text = "Supply Manager Decision Support System (smDSS)";
@@ -155,12 +293,22 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button ClearPNText;
         private System.Windows.Forms.TextBox PNtextbox;
         private System.Windows.Forms.TextBox qtydisplay;
         private System.Windows.Forms.Label qtyDisplayLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox LeadTimeProgrammed;
+        private System.Windows.Forms.TextBox LeadTimeE2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 
