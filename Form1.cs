@@ -56,9 +56,73 @@ namespace smDSS
             int month11 = month10 + 1;
             int month12 = month11 + 1;
 
-            labelMonth1.Text = " " + month + " / " + year +  "";
-            labelMonth2.Text = " " + month2 + " / " + year + "";
-            labelMonth3.Text = " " + month3 + " / " + year + "";
+            Month1GroupBox.Text = " " + month + " / " + year + "";
+            Month2GroupBox.Text = " " + month2 + " / " + year + "";
+            Month3GroupBox.Text = " " + month3 + " / " + year + "";
+            Month4GroupBox.Text = " " + month4 + " / " + year + "";
+            Month5GroupBox.Text = " " + month5 + " / " + year + "";
+            Month6GroupBox.Text = " " + month6 + " / " + year + "";
+            Month7GroupBox.Text = " " + month7 + " / " + year + "";
+            Month8GroupBox.Text = " " + month8 + " / " + year + "";
+            Month9GroupBox.Text = " " + month9 + " / " + year + "";
+            Month10GroupBox.Text = " " + month10 + " / " + year + "";
+            Month11GroupBox.Text = " " + month11 + " / " + year + "";
+            Month12GroupBox.Text = " " + month12 + " / " + year + "";
+
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\matth\source\repos\smDSS\SMData.mdf; Integrated Security = True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+
+                try
+                {
+                    string query = "SELECT * from Inventory";
+                    SqlDataAdapter da = new SqlDataAdapter(query, connection);
+                    connection.Open();
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "Inventory");
+                    PNtextbox.DataSource = ds.Tables["Inventory"];
+                    PNtextbox.ValueMember = "ID";
+                    PNtextbox.DisplayMember = "PartNumber";
+                    
+
+                }
+                catch (Exception ex)
+                {
+                    // write exception info to log or anything else
+                    MessageBox.Show("Error occured!");
+                }
+
+
+
+
+
+
+
+
+
+
+
+                /*
+
+                string sqldv = "SELECT * FROM Inventory";
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqldv, connection);
+                connection.Open();
+                DataSet ds = new DataSet();
+                sqlDataAdapter.Fill(ds, "Inventory_Member");
+                connection.Close();
+
+                PNtextbox.DataSource = ds;
+                connection.Close();
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = ds;
+                PNtextbox.DataSource = bindingSource.DataSource;
+                PNtextbox.DisplayMember = "Inventory_Member";
+                PNtextbox.ValueMember = "PartNumber";
+
+                */
+            }
+
         }
 
         private void qtyDisplayLabel_Click(object sender, EventArgs e)
@@ -126,8 +190,51 @@ namespace smDSS
                 {
                     QtyOnOrder3.Text = pocmd3.ExecuteScalar().ToString();
                 }
-
-
+                string posql4 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month4 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd4 = new SqlCommand(posql4, connection))
+                {
+                    QtyOnOrder4.Text = pocmd4.ExecuteScalar().ToString();
+                }
+                string posql5 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month5 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd5 = new SqlCommand(posql5, connection))
+                {
+                    QtyOnOrder5.Text = pocmd5.ExecuteScalar().ToString();
+                }
+                string posql6 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month6 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd6 = new SqlCommand(posql6, connection))
+                {
+                    QtyOnOrder6.Text = pocmd6.ExecuteScalar().ToString();
+                }
+                string posql7 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month7 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd7 = new SqlCommand(posql7, connection))
+                {
+                    QtyOnOrder7.Text = pocmd7.ExecuteScalar().ToString();
+                }
+                string posql8 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month8 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd8 = new SqlCommand(posql8, connection))
+                {
+                    QtyOnOrder8.Text = pocmd8.ExecuteScalar().ToString();
+                }
+                string posql9 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month9 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd9 = new SqlCommand(posql9, connection))
+                {
+                    QtyOnOrder9.Text = pocmd9.ExecuteScalar().ToString();
+                }
+                string posql10 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month10 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd10 = new SqlCommand(posql10, connection))
+                {
+                    QtyOnOrder10.Text = pocmd10.ExecuteScalar().ToString();
+                }
+                string posql11 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month11 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd11 = new SqlCommand(posql11, connection))
+                {
+                    QtyOnOrder11.Text = pocmd11.ExecuteScalar().ToString();
+                }
+                string posql12 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month12 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd12 = new SqlCommand(posql12, connection))
+                {
+                    QtyOnOrder12.Text = pocmd12.ExecuteScalar().ToString();
+                }
 
                 connection.Close();
             }
@@ -139,6 +246,11 @@ namespace smDSS
             PNtextbox.Text = "";
             qtydisplay.Text = "";
             QtyOnOrder1.Text = "";
+        }
+
+        private void Month7GroupBox_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

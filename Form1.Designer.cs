@@ -29,113 +29,159 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ClearPNText = new System.Windows.Forms.Button();
-            this.PNtextbox = new System.Windows.Forms.TextBox();
-            this.qtydisplay = new System.Windows.Forms.TextBox();
-            this.qtyDisplayLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.LeadTimeProgrammed = new System.Windows.Forms.TextBox();
-            this.LeadTimeE2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.labelMonth1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelMonth2 = new System.Windows.Forms.Label();
-            this.labelMonth3 = new System.Windows.Forms.Label();
-            this.QtyOnOrder1 = new System.Windows.Forms.TextBox();
-            this.QtyOnOrder2 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Month4GroupBox = new System.Windows.Forms.GroupBox();
+            this.QtyOnOrder4 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder8 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder7 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder6 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder5 = new System.Windows.Forms.TextBox();
             this.QtyOnOrder3 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder2 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder1 = new System.Windows.Forms.TextBox();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.qtyDisplayLabel = new System.Windows.Forms.Label();
+            this.qtydisplay = new System.Windows.Forms.TextBox();
+            this.ClearPNText = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Month1GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month2GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month3GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month5GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month6GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month7GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month8GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month9GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month10GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month11GroupBox = new System.Windows.Forms.GroupBox();
+            this.Month12GroupBox = new System.Windows.Forms.GroupBox();
+            this.QtyOnOrder9 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder10 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder11 = new System.Windows.Forms.TextBox();
+            this.QtyOnOrder12 = new System.Windows.Forms.TextBox();
+            this.LeftGroupBox = new System.Windows.Forms.GroupBox();
+            this.labelqtyordered = new System.Windows.Forms.Label();
+            this.PNtextbox = new System.Windows.Forms.ComboBox();
+            this.Month4GroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.Month1GroupBox.SuspendLayout();
+            this.Month2GroupBox.SuspendLayout();
+            this.Month3GroupBox.SuspendLayout();
+            this.Month5GroupBox.SuspendLayout();
+            this.Month6GroupBox.SuspendLayout();
+            this.Month7GroupBox.SuspendLayout();
+            this.Month8GroupBox.SuspendLayout();
+            this.Month9GroupBox.SuspendLayout();
+            this.Month10GroupBox.SuspendLayout();
+            this.Month11GroupBox.SuspendLayout();
+            this.Month12GroupBox.SuspendLayout();
+            this.LeftGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // contextMenuStrip1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
-            this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
-            this.tableLayoutPanel1.Controls.Add(this.ClearPNText, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.PNtextbox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.qtydisplay, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.qtyDisplayLabel, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.LeadTimeProgrammed, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.LeadTimeE2, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnAdmin, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.labelMonth1, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.labelMonth2, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.labelMonth3, 5, 3);
-            this.tableLayoutPanel1.Controls.Add(this.QtyOnOrder1, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.QtyOnOrder2, 4, 6);
-            this.tableLayoutPanel1.Controls.Add(this.QtyOnOrder3, 5, 6);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 12;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(830, 600);
-            this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // ClearPNText
+            // Month4GroupBox
             // 
-            this.ClearPNText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClearPNText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ClearPNText.Location = new System.Drawing.Point(3, 23);
-            this.ClearPNText.Name = "ClearPNText";
-            this.ClearPNText.Size = new System.Drawing.Size(84, 25);
-            this.ClearPNText.TabIndex = 1;
-            this.ClearPNText.Text = "Clear Text";
-            this.ClearPNText.UseVisualStyleBackColor = true;
-            this.ClearPNText.Click += new System.EventHandler(this.ClearPNText_Click);
+            this.Month4GroupBox.Controls.Add(this.QtyOnOrder4);
+            this.Month4GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month4GroupBox.Location = new System.Drawing.Point(393, 80);
+            this.Month4GroupBox.Name = "Month4GroupBox";
+            this.Month4GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month4GroupBox.TabIndex = 33;
+            this.Month4GroupBox.TabStop = false;
+            this.Month4GroupBox.Text = "Month4";
             // 
-            // PNtextbox
+            // QtyOnOrder4
             // 
-            this.PNtextbox.AllowDrop = true;
-            this.PNtextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.PNtextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
-            this.PNtextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PNtextbox.Location = new System.Drawing.Point(93, 23);
-            this.PNtextbox.Multiline = true;
-            this.PNtextbox.Name = "PNtextbox";
-            this.PNtextbox.Size = new System.Drawing.Size(130, 25);
-            this.PNtextbox.TabIndex = 2;
-            this.PNtextbox.TextChanged += new System.EventHandler(this.PNtextbox_TextChanged);
+            this.QtyOnOrder4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder4.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder4.Name = "QtyOnOrder4";
+            this.QtyOnOrder4.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder4.TabIndex = 20;
             // 
-            // qtydisplay
+            // QtyOnOrder8
             // 
-            this.qtydisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.qtydisplay.Location = new System.Drawing.Point(93, 54);
-            this.qtydisplay.Multiline = true;
-            this.qtydisplay.Name = "qtydisplay";
-            this.qtydisplay.Size = new System.Drawing.Size(130, 20);
-            this.qtydisplay.TabIndex = 3;
+            this.QtyOnOrder8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder8.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder8.Name = "QtyOnOrder8";
+            this.QtyOnOrder8.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder8.TabIndex = 24;
+            // 
+            // QtyOnOrder7
+            // 
+            this.QtyOnOrder7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder7.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder7.Name = "QtyOnOrder7";
+            this.QtyOnOrder7.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder7.TabIndex = 23;
+            // 
+            // QtyOnOrder6
+            // 
+            this.QtyOnOrder6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder6.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder6.Name = "QtyOnOrder6";
+            this.QtyOnOrder6.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder6.TabIndex = 22;
+            // 
+            // QtyOnOrder5
+            // 
+            this.QtyOnOrder5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder5.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder5.Name = "QtyOnOrder5";
+            this.QtyOnOrder5.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder5.TabIndex = 21;
+            // 
+            // QtyOnOrder3
+            // 
+            this.QtyOnOrder3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder3.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder3.Name = "QtyOnOrder3";
+            this.QtyOnOrder3.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder3.TabIndex = 18;
+            // 
+            // QtyOnOrder2
+            // 
+            this.QtyOnOrder2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder2.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder2.Name = "QtyOnOrder2";
+            this.QtyOnOrder2.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder2.TabIndex = 17;
+            // 
+            // QtyOnOrder1
+            // 
+            this.QtyOnOrder1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder1.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder1.Multiline = true;
+            this.QtyOnOrder1.Name = "QtyOnOrder1";
+            this.QtyOnOrder1.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder1.TabIndex = 16;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdmin.Location = new System.Drawing.Point(3, 268);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(84, 24);
+            this.btnAdmin.TabIndex = 0;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(93, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Enter Part Number";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // qtyDisplayLabel
             // 
@@ -150,207 +196,346 @@
             this.qtyDisplayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.qtyDisplayLabel.Click += new System.EventHandler(this.qtyDisplayLabel_Click);
             // 
-            // label1
+            // qtydisplay
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(93, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Enter Part Number";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.qtydisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.qtydisplay.Location = new System.Drawing.Point(93, 54);
+            this.qtydisplay.Multiline = true;
+            this.qtydisplay.Name = "qtydisplay";
+            this.qtydisplay.Size = new System.Drawing.Size(94, 20);
+            this.qtydisplay.TabIndex = 3;
             // 
-            // label3
+            // ClearPNText
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(3, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 28);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Lead Time (Programmed)";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ClearPNText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClearPNText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ClearPNText.Location = new System.Drawing.Point(3, 23);
+            this.ClearPNText.Name = "ClearPNText";
+            this.ClearPNText.Size = new System.Drawing.Size(84, 25);
+            this.ClearPNText.TabIndex = 1;
+            this.ClearPNText.Text = "Clear Text";
+            this.ClearPNText.UseVisualStyleBackColor = true;
+            this.ClearPNText.Click += new System.EventHandler(this.ClearPNText_Click);
             // 
-            // LeadTimeProgrammed
+            // tableLayoutPanel1
             // 
-            this.LeadTimeProgrammed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeadTimeProgrammed.Location = new System.Drawing.Point(93, 103);
-            this.LeadTimeProgrammed.Multiline = true;
-            this.LeadTimeProgrammed.Name = "LeadTimeProgrammed";
-            this.LeadTimeProgrammed.Size = new System.Drawing.Size(130, 22);
-            this.LeadTimeProgrammed.TabIndex = 8;
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
+            this.tableLayoutPanel1.ColumnCount = 14;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.Controls.Add(this.ClearPNText, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.qtydisplay, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.qtyDisplayLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAdmin, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.Month4GroupBox, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month1GroupBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month2GroupBox, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month3GroupBox, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month5GroupBox, 5, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month6GroupBox, 6, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month7GroupBox, 7, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month8GroupBox, 8, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month9GroupBox, 9, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month10GroupBox, 10, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month11GroupBox, 11, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Month12GroupBox, 12, 3);
+            this.tableLayoutPanel1.Controls.Add(this.LeftGroupBox, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.PNtextbox, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 169F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1303, 295);
+            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // LeadTimeE2
+            // Month1GroupBox
             // 
-            this.LeadTimeE2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeadTimeE2.Location = new System.Drawing.Point(93, 131);
-            this.LeadTimeE2.Multiline = true;
-            this.LeadTimeE2.Name = "LeadTimeE2";
-            this.LeadTimeE2.Size = new System.Drawing.Size(130, 26);
-            this.LeadTimeE2.TabIndex = 9;
+            this.Month1GroupBox.Controls.Add(this.QtyOnOrder1);
+            this.Month1GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month1GroupBox.Location = new System.Drawing.Point(93, 80);
+            this.Month1GroupBox.Name = "Month1GroupBox";
+            this.Month1GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month1GroupBox.TabIndex = 34;
+            this.Month1GroupBox.TabStop = false;
+            this.Month1GroupBox.Text = "Month1";
             // 
-            // label4
+            // Month2GroupBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(3, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 32);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Lead Time (E2)";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Month2GroupBox.Controls.Add(this.QtyOnOrder2);
+            this.Month2GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month2GroupBox.Location = new System.Drawing.Point(193, 80);
+            this.Month2GroupBox.Name = "Month2GroupBox";
+            this.Month2GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month2GroupBox.TabIndex = 35;
+            this.Month2GroupBox.TabStop = false;
+            this.Month2GroupBox.Text = "Month2";
             // 
-            // btnAdmin
+            // Month3GroupBox
             // 
-            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdmin.Location = new System.Drawing.Point(3, 573);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(84, 24);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            this.Month3GroupBox.Controls.Add(this.QtyOnOrder3);
+            this.Month3GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month3GroupBox.Location = new System.Drawing.Point(293, 80);
+            this.Month3GroupBox.Name = "Month3GroupBox";
+            this.Month3GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month3GroupBox.TabIndex = 36;
+            this.Month3GroupBox.TabStop = false;
+            this.Month3GroupBox.Text = "Month3";
             // 
-            // labelMonth1
+            // Month5GroupBox
             // 
-            this.labelMonth1.AutoSize = true;
-            this.labelMonth1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMonth1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelMonth1.Location = new System.Drawing.Point(355, 77);
-            this.labelMonth1.Name = "labelMonth1";
-            this.labelMonth1.Size = new System.Drawing.Size(107, 23);
-            this.labelMonth1.TabIndex = 6;
-            this.labelMonth1.Text = "Jan \'22";
-            this.labelMonth1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Month5GroupBox.Controls.Add(this.QtyOnOrder5);
+            this.Month5GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month5GroupBox.Location = new System.Drawing.Point(493, 80);
+            this.Month5GroupBox.Name = "Month5GroupBox";
+            this.Month5GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month5GroupBox.TabIndex = 37;
+            this.Month5GroupBox.TabStop = false;
+            this.Month5GroupBox.Text = "Month5";
             // 
-            // label5
+            // Month6GroupBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(229, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 28);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Qty On Hand";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Month6GroupBox.Controls.Add(this.QtyOnOrder6);
+            this.Month6GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month6GroupBox.Location = new System.Drawing.Point(593, 80);
+            this.Month6GroupBox.Name = "Month6GroupBox";
+            this.Month6GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month6GroupBox.TabIndex = 38;
+            this.Month6GroupBox.TabStop = false;
+            this.Month6GroupBox.Text = "Month6";
             // 
-            // label6
+            // Month7GroupBox
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(229, 128);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 32);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Qty Reserved";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Month7GroupBox.Controls.Add(this.QtyOnOrder7);
+            this.Month7GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month7GroupBox.Location = new System.Drawing.Point(693, 80);
+            this.Month7GroupBox.Name = "Month7GroupBox";
+            this.Month7GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month7GroupBox.TabIndex = 39;
+            this.Month7GroupBox.TabStop = false;
+            this.Month7GroupBox.Text = "Month7";
+            this.Month7GroupBox.Enter += new System.EventHandler(this.Month7GroupBox_Enter);
             // 
-            // label7
+            // Month8GroupBox
             // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(229, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 25);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "On Order";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Month8GroupBox.Controls.Add(this.QtyOnOrder8);
+            this.Month8GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month8GroupBox.Location = new System.Drawing.Point(793, 80);
+            this.Month8GroupBox.Name = "Month8GroupBox";
+            this.Month8GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month8GroupBox.TabIndex = 40;
+            this.Month8GroupBox.TabStop = false;
+            this.Month8GroupBox.Text = "Month8";
             // 
-            // labelMonth2
+            // Month9GroupBox
             // 
-            this.labelMonth2.AutoSize = true;
-            this.labelMonth2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMonth2.Location = new System.Drawing.Point(468, 77);
-            this.labelMonth2.Name = "labelMonth2";
-            this.labelMonth2.Size = new System.Drawing.Size(99, 23);
-            this.labelMonth2.TabIndex = 14;
-            this.labelMonth2.Text = "Feb \'22";
-            this.labelMonth2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Month9GroupBox.Controls.Add(this.QtyOnOrder9);
+            this.Month9GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month9GroupBox.Location = new System.Drawing.Point(893, 80);
+            this.Month9GroupBox.Name = "Month9GroupBox";
+            this.Month9GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month9GroupBox.TabIndex = 41;
+            this.Month9GroupBox.TabStop = false;
+            this.Month9GroupBox.Text = "Month9";
             // 
-            // labelMonth3
+            // Month10GroupBox
             // 
-            this.labelMonth3.AutoSize = true;
-            this.labelMonth3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMonth3.Location = new System.Drawing.Point(573, 77);
-            this.labelMonth3.Name = "labelMonth3";
-            this.labelMonth3.Size = new System.Drawing.Size(102, 23);
-            this.labelMonth3.TabIndex = 15;
-            this.labelMonth3.Text = "Mar \'22";
-            this.labelMonth3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Month10GroupBox.Controls.Add(this.QtyOnOrder10);
+            this.Month10GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month10GroupBox.Location = new System.Drawing.Point(993, 80);
+            this.Month10GroupBox.Name = "Month10GroupBox";
+            this.Month10GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month10GroupBox.TabIndex = 42;
+            this.Month10GroupBox.TabStop = false;
+            this.Month10GroupBox.Text = "Month10";
             // 
-            // QtyOnOrder1
+            // Month11GroupBox
             // 
-            this.QtyOnOrder1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QtyOnOrder1.Location = new System.Drawing.Point(355, 163);
-            this.QtyOnOrder1.Multiline = true;
-            this.QtyOnOrder1.Name = "QtyOnOrder1";
-            this.QtyOnOrder1.Size = new System.Drawing.Size(107, 19);
-            this.QtyOnOrder1.TabIndex = 16;
+            this.Month11GroupBox.Controls.Add(this.QtyOnOrder11);
+            this.Month11GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month11GroupBox.Location = new System.Drawing.Point(1093, 80);
+            this.Month11GroupBox.Name = "Month11GroupBox";
+            this.Month11GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month11GroupBox.TabIndex = 43;
+            this.Month11GroupBox.TabStop = false;
+            this.Month11GroupBox.Text = "Month11";
             // 
-            // QtyOnOrder2
+            // Month12GroupBox
             // 
-            this.QtyOnOrder2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QtyOnOrder2.Location = new System.Drawing.Point(468, 163);
-            this.QtyOnOrder2.Name = "QtyOnOrder2";
-            this.QtyOnOrder2.Size = new System.Drawing.Size(99, 20);
-            this.QtyOnOrder2.TabIndex = 17;
+            this.Month12GroupBox.Controls.Add(this.QtyOnOrder12);
+            this.Month12GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Month12GroupBox.Location = new System.Drawing.Point(1193, 80);
+            this.Month12GroupBox.Name = "Month12GroupBox";
+            this.Month12GroupBox.Size = new System.Drawing.Size(94, 163);
+            this.Month12GroupBox.TabIndex = 44;
+            this.Month12GroupBox.TabStop = false;
+            this.Month12GroupBox.Text = "Month12";
             // 
-            // contextMenuStrip1
+            // QtyOnOrder9
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.QtyOnOrder9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder9.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder9.Name = "QtyOnOrder9";
+            this.QtyOnOrder9.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder9.TabIndex = 0;
             // 
-            // QtyOnOrder3
+            // QtyOnOrder10
             // 
-            this.QtyOnOrder3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QtyOnOrder3.Location = new System.Drawing.Point(573, 163);
-            this.QtyOnOrder3.Name = "QtyOnOrder3";
-            this.QtyOnOrder3.Size = new System.Drawing.Size(102, 20);
-            this.QtyOnOrder3.TabIndex = 18;
+            this.QtyOnOrder10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder10.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder10.Name = "QtyOnOrder10";
+            this.QtyOnOrder10.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder10.TabIndex = 0;
+            // 
+            // QtyOnOrder11
+            // 
+            this.QtyOnOrder11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder11.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder11.Name = "QtyOnOrder11";
+            this.QtyOnOrder11.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder11.TabIndex = 0;
+            // 
+            // QtyOnOrder12
+            // 
+            this.QtyOnOrder12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.QtyOnOrder12.Location = new System.Drawing.Point(3, 140);
+            this.QtyOnOrder12.Name = "QtyOnOrder12";
+            this.QtyOnOrder12.Size = new System.Drawing.Size(88, 20);
+            this.QtyOnOrder12.TabIndex = 0;
+            // 
+            // LeftGroupBox
+            // 
+            this.LeftGroupBox.Controls.Add(this.labelqtyordered);
+            this.LeftGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LeftGroupBox.Location = new System.Drawing.Point(3, 80);
+            this.LeftGroupBox.Name = "LeftGroupBox";
+            this.LeftGroupBox.Size = new System.Drawing.Size(84, 163);
+            this.LeftGroupBox.TabIndex = 45;
+            this.LeftGroupBox.TabStop = false;
+            this.LeftGroupBox.Text = "Months";
+            // 
+            // labelqtyordered
+            // 
+            this.labelqtyordered.AutoSize = true;
+            this.labelqtyordered.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelqtyordered.Location = new System.Drawing.Point(3, 147);
+            this.labelqtyordered.Name = "labelqtyordered";
+            this.labelqtyordered.Size = new System.Drawing.Size(69, 13);
+            this.labelqtyordered.TabIndex = 0;
+            this.labelqtyordered.Text = "Qty On Order";
+            this.labelqtyordered.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PNtextbox
+            // 
+            this.PNtextbox.FormattingEnabled = true;
+            this.PNtextbox.Location = new System.Drawing.Point(93, 23);
+            this.PNtextbox.Name = "PNtextbox";
+            this.PNtextbox.Size = new System.Drawing.Size(94, 21);
+            this.PNtextbox.Sorted = true;
+            this.PNtextbox.TabIndex = 46;
+            this.PNtextbox.SelectionChangeCommitted += new System.EventHandler(this.PNtextbox_TextChanged);
+            this.PNtextbox.SelectedValueChanged += new System.EventHandler(this.PNtextbox_TextChanged);
+            this.PNtextbox.TextChanged += new System.EventHandler(this.PNtextbox_TextChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1031, 600);
+            this.ClientSize = new System.Drawing.Size(1303, 295);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(1319, 334);
             this.Name = "MainForm";
             this.Text = "Supply Manager Decision Support System (smDSS)";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Month4GroupBox.ResumeLayout(false);
+            this.Month4GroupBox.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.Month1GroupBox.ResumeLayout(false);
+            this.Month1GroupBox.PerformLayout();
+            this.Month2GroupBox.ResumeLayout(false);
+            this.Month2GroupBox.PerformLayout();
+            this.Month3GroupBox.ResumeLayout(false);
+            this.Month3GroupBox.PerformLayout();
+            this.Month5GroupBox.ResumeLayout(false);
+            this.Month5GroupBox.PerformLayout();
+            this.Month6GroupBox.ResumeLayout(false);
+            this.Month6GroupBox.PerformLayout();
+            this.Month7GroupBox.ResumeLayout(false);
+            this.Month7GroupBox.PerformLayout();
+            this.Month8GroupBox.ResumeLayout(false);
+            this.Month8GroupBox.PerformLayout();
+            this.Month9GroupBox.ResumeLayout(false);
+            this.Month9GroupBox.PerformLayout();
+            this.Month10GroupBox.ResumeLayout(false);
+            this.Month10GroupBox.PerformLayout();
+            this.Month11GroupBox.ResumeLayout(false);
+            this.Month11GroupBox.PerformLayout();
+            this.Month12GroupBox.ResumeLayout(false);
+            this.Month12GroupBox.PerformLayout();
+            this.LeftGroupBox.ResumeLayout(false);
+            this.LeftGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button ClearPNText;
-        private System.Windows.Forms.TextBox PNtextbox;
-        private System.Windows.Forms.TextBox qtydisplay;
-        private System.Windows.Forms.Label qtyDisplayLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelMonth1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox LeadTimeProgrammed;
-        private System.Windows.Forms.TextBox LeadTimeE2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAdmin;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label labelMonth2;
-        private System.Windows.Forms.Label labelMonth3;
-        private System.Windows.Forms.TextBox QtyOnOrder1;
-        private System.Windows.Forms.TextBox QtyOnOrder2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.GroupBox Month4GroupBox;
+        private System.Windows.Forms.TextBox QtyOnOrder4;
+        private System.Windows.Forms.TextBox QtyOnOrder8;
+        private System.Windows.Forms.TextBox QtyOnOrder7;
+        private System.Windows.Forms.TextBox QtyOnOrder6;
+        private System.Windows.Forms.TextBox QtyOnOrder5;
         private System.Windows.Forms.TextBox QtyOnOrder3;
+        private System.Windows.Forms.TextBox QtyOnOrder2;
+        private System.Windows.Forms.TextBox QtyOnOrder1;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label qtyDisplayLabel;
+        private System.Windows.Forms.TextBox qtydisplay;
+        private System.Windows.Forms.Button ClearPNText;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox Month1GroupBox;
+        private System.Windows.Forms.GroupBox Month2GroupBox;
+        private System.Windows.Forms.GroupBox Month3GroupBox;
+        private System.Windows.Forms.GroupBox Month5GroupBox;
+        private System.Windows.Forms.GroupBox Month6GroupBox;
+        private System.Windows.Forms.GroupBox Month7GroupBox;
+        private System.Windows.Forms.GroupBox Month8GroupBox;
+        private System.Windows.Forms.GroupBox Month9GroupBox;
+        private System.Windows.Forms.GroupBox Month10GroupBox;
+        private System.Windows.Forms.GroupBox Month11GroupBox;
+        private System.Windows.Forms.GroupBox Month12GroupBox;
+        private System.Windows.Forms.TextBox QtyOnOrder9;
+        private System.Windows.Forms.TextBox QtyOnOrder10;
+        private System.Windows.Forms.TextBox QtyOnOrder11;
+        private System.Windows.Forms.TextBox QtyOnOrder12;
+        private System.Windows.Forms.GroupBox LeftGroupBox;
+        private System.Windows.Forms.Label labelqtyordered;
+        private System.Windows.Forms.ComboBox PNtextbox;
     }
 }
 
