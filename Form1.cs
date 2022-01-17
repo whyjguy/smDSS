@@ -108,7 +108,7 @@ namespace smDSS
                 int month11 = month10 + 1;
                 int month12 = month11 + 1;
 
-                string posql1 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) <= '" + month + "' AND YEAR(DueDate) <= '" + year + "' AND QtyReceived != QtyOrdered OR PartNo = '" + pnselect + "' AND QtyReceived != QtyOrdered AND YEAR(DueDate) < '" + year + "'";
+                string posql1 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) <= '" + month + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered OR PartNo = '" + pnselect + "' AND QtyReceived != QtyOrdered AND YEAR(DueDate) < '" + year + "'";
                 using (SqlCommand pocmd1 = new SqlCommand(posql1, connection))
                 {
                   
