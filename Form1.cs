@@ -41,7 +41,24 @@ namespace smDSS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-          
+            DateTime dt = DateTime.Now;
+            int year = dt.Year;
+            int month = dt.Month;
+            int month2 = month + 1;
+            int month3 = month2 + 1;
+            int month4 = month3 + 1;
+            int month5 = month4 + 1;
+            int month6 = month5 + 1;
+            int month7 = month6 + 1;
+            int month8 = month7 + 1;
+            int month9 = month8 + 1;
+            int month10 = month9 + 1;
+            int month11 = month10 + 1;
+            int month12 = month11 + 1;
+
+            labelMonth1.Text = " " + month + " / " + year +  "";
+            labelMonth2.Text = " " + month2 + " / " + year + "";
+            labelMonth3.Text = " " + month3 + " / " + year + "";
         }
 
         private void qtyDisplayLabel_Click(object sender, EventArgs e)
@@ -73,34 +90,45 @@ namespace smDSS
                     reader.Close();
                 }
 
-                string posql = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) <= 1 AND YEAR(DueDate) <= 2022 AND QtyReceived != QtyOrdered";
-               // SqlCommand pocommand = new SqlCommand(posql, connection);
-              // SqlDataReader poreader = pocommand.ExecuteReader();
+                DateTime dt = DateTime.Now;
 
-                using (SqlCommand pocommand = new SqlCommand(posql, connection))
+                // Get year, month
+                int year = dt.Year;
+
+                int month = dt.Month;
+                int month2 = month + 1;
+                int month3 = month2 + 1;
+                int month4 = month3 + 1;
+                int month5 = month4 + 1;
+                int month6 = month5 + 1;
+                int month7 = month6 + 1;
+                int month8 = month7 + 1;
+                int month9 = month8 + 1;
+                int month10 = month9 + 1;
+                int month11 = month10 + 1;
+                int month12 = month11 + 1;
+
+                string posql1 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) <= '" + month + "' AND YEAR(DueDate) <= '" + year + "' AND QtyReceived != QtyOrdered OR PartNo = '" + pnselect + "' AND QtyReceived != QtyOrdered AND YEAR(DueDate) < '" + year + "'";
+                using (SqlCommand pocmd1 = new SqlCommand(posql1, connection))
                 {
+                  
+                    QtyOnOrder1.Text = pocmd1.ExecuteScalar().ToString();
                     
-                    QtyOnOrder1.Text = pocommand.ExecuteScalar().ToString();
                 }
-
-
-/*
-               try
-
-
-
+                
+                string posql2 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month2 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd2 = new SqlCommand(posql2, connection))
                 {
-                    while(poreader.Read())
-                    {
-                        QtyOnOrder1.Text = Convert.ToString(poreader);
-                    }
+                    QtyOnOrder2.Text = pocmd2.ExecuteScalar().ToString();
                 }
-                finally
+                string posql3 = "SELECT SUM(QtyOrdered) FROM PurchaseOrders WHERE PartNo = '" + pnselect + "' AND MONTH(DueDate) = '" + month3 + "' AND YEAR(DueDate) = '" + year + "' AND QtyReceived != QtyOrdered";
+                using (SqlCommand pocmd3 = new SqlCommand(posql3, connection))
                 {
-                    poreader.Close();
+                    QtyOnOrder3.Text = pocmd3.ExecuteScalar().ToString();
                 }
 
-*/
+
+
                 connection.Close();
             }
         }
